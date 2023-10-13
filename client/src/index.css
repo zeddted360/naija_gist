@@ -1,0 +1,12 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&family=Roboto:ital,wght@1,300&display=swap');
+:root {
+    --lighter:#fafaf9;
+    --light:#e4e4e7;
+    --dark:#404040;
+    --darker:#171717;
+    --light_red:#fecaca;
+    --dark_red:#b91c1c;
+    --light_green:#bbf7d0;
+    --dark_green:#15803d;
+    --font:'Roboto', sans-serif;
+}

@@ -1,0 +1,219 @@
+.header.light {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 1px 1px 2px;
+    position: sticky;
+    top:0;
+    padding:1rem;
+    z-index: 100;
+    background-color: var(--lighter);
+}
+.header.dark{
+ display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+    box-shadow: 1px 1px 2px;
+    position: sticky;
+    top:0;
+    padding:1rem;
+    z-index: 100;
+    background-color: var(--dark);
+}
+.header-content {
+    display:flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-right: 1rem;
+}
+
+.header .faDroplet {
+    width: 3rem;
+    height: 3rem;
+    margin: .5rem;
+}
+
+.header .name {
+    display: block;
+    font-size:3rem;
+    font-weight: bold;
+    text-decoration:none;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    padding: 2px 4px;
+    margin-bottom: .7rem;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
+    flex: 1;
+    padding: 1rem;
+}
+.nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.2rem;
+    font-size: 1.5rem;
+    margin: auto 0;
+    min-height:10vh;
+}
+.nav ul li,.a {
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    border-radius: .5rem;
+    padding: 2px 4px;
+    margin-bottom: .2rem;
+}
+.nav ul li:hover, .a:hover {
+    background: var(--lighter);
+} 
+ .sign-in-up {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+.sign-in-up a {
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+    border-radius: .5rem;
+    transition: .5s;
+}
+.bar-links .faBars {
+    width: 3rem;
+    height: 3rem;
+    margin: .5rem;
+    cursor: pointer;
+    transition: .45;
+}
+.bar-links i:hover {
+    background: var(--light);
+}
+
+.bar-links .link-bar {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 2px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 10%;
+    z-index: +2;
+    min-width: 50vw;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+.bar-links .link-bar  span:not(span.alog) {
+    font-size: 4rem;
+    cursor: pointer;
+    transition: .5s;
+    width:20%;
+    height: 10%;
+}
+.bar-links .link-bar  span:not(span.alog):hover {
+    background: var(--dark);
+    color: var(--light);
+    width: fit-content;
+    height: fit-content;
+    border-radius: .5rem;
+}
+.link-bar a {
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: .5rem;
+    border-left: 1px solid var(--dark);
+}
+.dark-mode {
+    display: flex;
+    gap: .5rem;
+    font-size: .9rem;
+}
+.ball-container {
+    background: var(--lighter);
+    width: 6rem;
+    margin: auto 0;
+    padding: 2px 4px;
+    border-radius: .5rem;
+    cursor: pointer;
+
+}
+
+.ball-container .ball {
+ background: var(--darker);
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+}
+.ball-container .roll {
+    background: var(--darker);
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    animation-name: roll;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay:0 ;
+    animation-fill-mode: both;
+    animation-iteration-count:1;
+    transition: .5s;
+}
+/* style link for dark mode hover */
+.a-dark:hover {
+    background: var(--dark);
+}
+/* style link for darkmode */
+.a-light{
+    transition: .5s;
+}
+.a-light:hover{
+    background: var(--lighter);
+    cursor: pointer;
+    /* border-radius: .5rem; */
+}
+.alog{
+    border-left: 1px solid;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+@keyframes roll {
+    from {
+        transform: translateX(0px);
+    }to {
+        transform: translateX(40px);
+    }
+}
+
+
+@media (min-width:280px){
+    .nav{
+        display: none;
+    }
+    .header .name{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width:1024px){
+    .nav{
+        display: flex;
+    }
+    .bar-links{
+        display: none;
+    }
+    .welcome {
+        display: none;
+    }
+}
