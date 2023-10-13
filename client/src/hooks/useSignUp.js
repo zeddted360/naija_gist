@@ -43,7 +43,7 @@ export const useSignUpHook = (url) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          accept: 'application/json',
+          'accept': 'application/json',
         },
         body: JSON.stringify({ username, email, password }),
       });
