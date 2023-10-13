@@ -28,13 +28,23 @@ const postBlog = async (req, res) => {
   const files = req.files;
   const medias = files.map((item) => item.filename);
   try {
-      const response = await blogs.create({
+    if (!files) {
+      const result = await blogs.create({
         title,
         content,
-        media:files ?  medias: '',
         postedBy,
       });
-      res.status(200).json(response);
+      res.status(200).json(result);
+    }
+    if (files) {
+      const result = await blogs.create({
+        title,
+        content,
+        media: medias,
+        postedBy,
+      });
+      res.status(200).json(result);
+    }
   } catch (error) {
     res.status(400).json(error.message);
   }
