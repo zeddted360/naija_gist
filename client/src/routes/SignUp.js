@@ -15,7 +15,7 @@ const SignUp = () => {
     handleChange,
     handleSubmit,
     showAlert,
-  } = useSignUpHook(`http://localhost:5050/naija_gist/sign_up`);
+  } = useSignUpHook(`https://naija-gist-server.vercel.app/naija_gist/sign_up`);
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const inputRef1 = useRef(null);

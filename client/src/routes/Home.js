@@ -9,9 +9,9 @@ import { time } from '../hooks/postedAt';
 const Home = () => {
   const { user } = useAuthContext();
 
-  const mediaUrl = 'http://localhost:5050/images';
+  const mediaUrl = 'https://naija-gist-server.vercel.app/images';
   const { blog, errors } = useFetch(
-    'http://localhost:5050/naija_gist/blog/home'
+    'https://naija-gist-server.vercel.app/naija_gist/blog/home'
   );
   const { dark } = useThemeContext();
 

@@ -19,7 +19,7 @@ const signUpUser = async (req, res) => {
   };
   const { username, email, password } = req.body;
   const newUser = await User.signUp(username, email, password);
-  const currentUrl = `http://localhost:5050`;
+  const currentUrl = `https://naija-gist-server.vercel.app/`;
   const userToken = token(newUser._id);
   const _id = newUser._id;
   const uniqueId = uuidv4() + _id;
@@ -127,7 +127,7 @@ const logInUser = async (req, res) => {
 
 // reset password
 const resetPassword = async (req, res) => {
-  const currentUrl = `http://localhost:5050`;
+  const currentUrl = `https://naija-gist-server.vercel.app/`;
  
   try{
     const { mail } = req.body;

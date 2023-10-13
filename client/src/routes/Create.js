@@ -4,9 +4,15 @@ import {useCreate} from '../hooks/useCreate';
 const Create = () => {
   const { dark } = useThemeContext();
 
- const {handleFile, errors, handleChange, handleSubmit, formData, msg, progress } = useCreate(
-   'http://localhost:5050/naija_gist/blog/post'
- );
+ const {
+   handleFile,
+   errors,
+   handleChange,
+   handleSubmit,
+   formData,
+   msg,
+   progress,
+ } = useCreate('https://naija-gist-server.vercel.app/naija_gist/blog/post');
   return (
     <div className='create'>
       {!msg || !progress ? (
