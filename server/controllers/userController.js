@@ -58,7 +58,8 @@ const signUpUser = async (req, res) => {
     await transporter.sendMail(mailOptions);
   } catch (error) {
     console.log(error.message);
-  };
+    };
+    res.status(200).json('User created successfully');
 }catch(error){
   res.status(400).json({error:error.message})
 }
