@@ -28,26 +28,15 @@ const postBlog = async (req, res) => {
   const files = req.files;
   const medias = files.map((item) => item.filename);
   try {
-    if (!files) {
       const response = await blogs.create({
         title,
         content,
+        media:files ?  medias: '',
         postedBy,
       });
       res.status(200).json(response);
-    }
-    if (files) {
-      const response = await blogs.create({
-        title,
-        content,
-        media: medias,
-        postedBy,
-      });
-      res.status(200).json(response);
-    }
   } catch (error) {
-    // res.status(400).json(error.message);
-    console.log(error);
+    res.status(400).json(error.message);
   }
 };
 //delete a blog

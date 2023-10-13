@@ -70,6 +70,7 @@ export const useCreate = (url) => {
           });
         },
       });
+      console.log(response);
       setMsg('Uploaded');
       navigate('/');
       setFormData({
