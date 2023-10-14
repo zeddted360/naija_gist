@@ -148,8 +148,7 @@ const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
                       blog.likes.includes(user.username) && blogLikes.bg
                         ? 'dodgerblue'
                         : '',
-                    padding: '.5rem',
-                    fontSize: '1.5rem',
+                   
                   }}
                   className='like'
                   icon={faThumbsUp}
@@ -175,7 +174,6 @@ const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
             )}
             <button onClick={() => handleUnlikeBlog(blog._id)}>
               <FontAwesomeIcon
-                style={{ fontSize: '1.5rem' }}
                 className='unlike'
                 icon={faThumbsDown}
               />
@@ -183,7 +181,6 @@ const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
             {blog.postedBy === user.username && (
               <button onClick={() => handleDelete(blog._id)}>
                 <FontAwesomeIcon
-                  style={{ fontSize: '1.5rem' }}
                   className='delete'
                   icon={faTrash}
                 />
@@ -194,7 +191,7 @@ const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
                 <Link id='edit' to={`/naija_gist/details/${blog._id}/edit`}>
                   <FontAwesomeIcon
                     className='edit'
-                    style={{ color: '#171717', fontSize: '1.5rem' }}
+                    style={{ color: '#171717', }}
                     icon={faFilePen}
                   />
                 </Link>

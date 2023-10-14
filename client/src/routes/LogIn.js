@@ -15,7 +15,7 @@ const LogIn = () => {
   const inputRef = useRef(null);
   const { dark } = useThemeContext();
   const { errors, formData, handleSubmit, handleChange } = useLogin(
-    `https://naija-gist-server.vercel.app/naija_gist/log_in`
+    `https:naija-gist-server.vercel.app/naija_gist/log_in`
   );
   const [eyeOpen, setEyeOpen] = useState(true);
   const [eyeClose, setEyeClose] = useState(false);
@@ -39,7 +39,7 @@ const LogIn = () => {
     console.log(mail);
 try{
   const response = await axios.post(
-    `https://naija-gist-server.vercel.app/naija_gist/reset/password`,
+    `https:naija-gist-server.vercel.app/naija_gist/reset/password`,
     { mail }
   );
   window.alert(response.data.message);

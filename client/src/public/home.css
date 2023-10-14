@@ -48,10 +48,14 @@ h2{
     background: var(--dark);
     color: var(--lighter);
 }
-video,img {
+video {
     border-radius: .5rem;
+    max-width: 25rem;
+    max-height: 25rem;
+    object-fit: cover;
 }
 img {
+    border-radius: .5rem;
     max-width: 12rem;
     max-height: 12rem;
     object-fit: cover;

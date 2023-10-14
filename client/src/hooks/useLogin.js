@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const useLogin =(url)=> {
 const navigate = useNavigate()
-  const { user, dispatch } = useAuthContext();
+  const { dispatch } = useAuthContext();
   const [errors, setErrors] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -36,7 +36,7 @@ const navigate = useNavigate()
           'Content-Type': 'application/json',
           'accept': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password })
       });
       const data = await response.json();
       if (!response.ok) {

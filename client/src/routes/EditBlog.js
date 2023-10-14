@@ -20,7 +20,7 @@ const EditBlog = () => {
   useEffect(() => {
     const goFetch = async () => {
       const response = await axios.get(
-        `https://naija-gist-server.vercel.app/naija_gist/blog/${id}`
+        `https:naija-gist-server.vercel.app/naija_gist/blog/${id}`
       );
       const data = response.data;
       setFormData(data);
@@ -60,7 +60,7 @@ const EditBlog = () => {
 
     try {
       const response = await axios.put(
-        `https://naija-gist-server.vercel.app/naija_gist/editBlog/${id}`,
+        `https:naija-gist-server.vercel.app/naija_gist/editBlog/${id}`,
         updatedData,
         {
           onUploadProgress: (progressEvent) => {

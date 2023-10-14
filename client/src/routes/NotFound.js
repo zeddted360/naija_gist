@@ -3,7 +3,7 @@ const NotFound = () => {
         <div style={{
             display:"grid",
             placeItems:"center",
-            height:'80vh'
+            height:'100%'
         }} className="not-found">
             <h1>Ooops! an error occurred with a status of </h1>
             <h2>404</h2><br/><br/>

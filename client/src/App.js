@@ -39,3 +39,7 @@ const App = () => {
 };
 
 export default App;
+
+// mongodb atlas string 
+// 
+// ?retryWrites=true&w=majority

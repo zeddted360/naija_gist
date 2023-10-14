@@ -7,11 +7,10 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import { time } from '../hooks/postedAt';
 
 const Home = () => {
-  const { user } = useAuthContext();
 
-  const mediaUrl = 'https://naija-gist-server.vercel.app/images';
+  const mediaUrl = 'https:naija-gist-server.vercel.app/images';
   const { blog, errors } = useFetch(
-    'https://naija-gist-server.vercel.app/naija_gist/blog/home'
+    'https:naija-gist-server.vercel.app/naija_gist/blog/home'
   );
   const { dark } = useThemeContext();
 
