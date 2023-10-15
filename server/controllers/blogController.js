@@ -31,25 +31,16 @@ const postBlog = async (req, res) => {
      return item.filename;
      });
     
-    // if (!files) {
       const result = await blogs.create({
         title,
         content,
-        media: files ? medias :'',
+        media: files ? medias : '',
         postedBy,
       });
-      // res.status(200).json(result);
-    // }else{
-      // const result = await blogs.create({
-      //   title,
-      //   content,
-      //   media: medias,
-      //   postedBy,
-      // });
+     
       res.status(200).json(result);
-    // }
   } catch (error) {
-    res.status(400).json(error.message);
+    res.status(400).json(error);
     console.log(error.message);
   }
 };
