@@ -16,7 +16,6 @@ import { time } from '../../hooks/postedAt';
  
 const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
   const url = new URL((window.location.href));
-  console.log(url)
   const { blog, errors } = useFetch(`${endPoint}/blog/${id}`);
   const [error, setError] = useState('');
   const [blogLikes, setBlogLikes] = useState({
@@ -99,7 +98,7 @@ const BlogItem = ({ id, mediaUrl, navigate, user, dark, endPoint }) => {
                 blog.media.length !== 0 ? 'media-only-media' : 'media-only'
               }
             >
-              {blog.media &&
+              {!blog.media.includes(null) &&
                 blog.media.map((media, index) => {
                   return (
                     <div key={index} div className='media-content'>

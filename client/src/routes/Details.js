@@ -10,8 +10,8 @@ const Details = () => {
   const { id } = useParams();
   const { user } = useAuthContext();
 
-  const mediaUrl = 'https:naija-gist-server.vercel.app/images';
-  const endPoint = 'https:naija-gist-server.vercel.app/naija_gist';
+  const mediaUrl = 'https://naija-gist-server.vercel.app/images';
+  const endPoint = 'https://naija-gist-server.vercel.app/naija_gist';
   return (
     <div style={{ width: '100%', padding: '.5rem' }} className='container'>
       <BlogItem

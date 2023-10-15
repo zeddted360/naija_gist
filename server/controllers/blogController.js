@@ -26,8 +26,11 @@ const getSingleBlog = async (req, res) => {
 const postBlog = async (req, res) => {
   const { title, content, postedBy } = req.body;
   const files = req.files;
-  const medias = files.map((item) => item.filename);
   try {
+     const medias = files.map((item) => {
+     return item.filename;
+     });
+    
     if (!files) {
       const result = await blogs.create({
         title,
@@ -36,7 +39,7 @@ const postBlog = async (req, res) => {
       });
       res.status(200).json(result);
     }
-    if (files) {
+if (files) {
       const result = await blogs.create({
         title,
         content,
@@ -47,6 +50,7 @@ const postBlog = async (req, res) => {
     }
   } catch (error) {
     res.status(400).json(error.message);
+    console.log(error.message);
   }
 };
 //delete a blog

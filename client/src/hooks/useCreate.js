@@ -14,11 +14,24 @@ export const useCreate = (url) => {
     content: '',
   });
   const { user } = useAuthContext();
+
   const handleFile = (event) => {
     const { files } = event.target;
-    setFiles((prevState) => files);
+    Array.from(files).forEach((item) => {
+      const arr = ['.png', '.jpeg', '.jpg', '.webp', '.mp4'];
+      const lastIndex = item.name.lastIndexOf('.');
+      const extName = item.name.slice(lastIndex);
+      if (!arr.includes(extName)) {
+        setErrors(
+          'Sorry the file format is not accepted \n only jpg, png, jpeg, webp and mp4 files are accepted'
+        );
+        return;
+      } else {
+        setErrors('');
+        setFiles((prevState) => files);
+      }
+    });
   };
-
   const handleFileUpload = () => {
     if (!files) {
       setMsg('no file selected');
@@ -38,7 +51,7 @@ export const useCreate = (url) => {
     event.preventDefault();
     if (!user) {
       navigate('/naija_gist/log_in');
-      return
+      return;
     }
     if (!formData.title || !formData.content) {
       setErrors('All fields must be filled');
@@ -70,7 +83,6 @@ export const useCreate = (url) => {
           });
         },
       });
-      console.log(response);
       setMsg('Uploaded');
       navigate('/');
       setFormData({
@@ -80,7 +92,7 @@ export const useCreate = (url) => {
       setFiles('');
       setErrors('');
     } catch (error) {
-      setErrors(error.message);
+      window.alert(error.message);
     }
   };
 
