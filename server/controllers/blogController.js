@@ -38,8 +38,7 @@ const postBlog = async (req, res) => {
         postedBy,
       });
       res.status(200).json(result);
-    }
-if (files) {
+    }else{
       const result = await blogs.create({
         title,
         content,
