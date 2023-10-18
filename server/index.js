@@ -13,10 +13,10 @@ const path = require('path');
 const app = express();
 const storage = multer.diskStorage({
   destination:function (req, file, cb) {
-   return cb(null, './uploads/images');
+   cb(null, './uploads/images');
   },
   filename: function(req, file, cb) {
-   return cb(
+   cb(
       null,
       `${file.fieldname}_${Date.now()}_${path.extname(file.originalname)}`
     );
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
   res.send('welcome to naija_gist');
 });
 
-app.use(express.static('uploads'));
+app.use('/uploads',express.static('uploads'));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(cors());
